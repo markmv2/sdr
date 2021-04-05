@@ -110,49 +110,24 @@ def differential_decode(bits_in, N, modulus):
     return bits_out
 
 
+
+
 # read IQ samples from file, after gnu radio clock sync
 N = 2048
-samples = read_iq("data/clock_sync_200MHz.bin", N, 1200000)
+samples = read_iq("data/clock_sync_200MHz.bin", N, 1000000)
 
 # read IQ samples from file, after gnu radio costas loop
-gnucostas = read_iq("data/phase_sync_200MHz.bin", N, 1200000)
+gnucostas = read_iq("data/phase_sync_200MHz.bin", N, 1000000)
 
 # try different alpha and beta values to optimize evm
 #for i in range(10):
-    #(samples_out, error_out, phase_out, freq_out) = costas_loop(samples, N, 0.3, 0.01)
+    #(samples_out, error_out, phase_out, freq_out) = costas_loop(samples, N, 0.6, 0.03)
     #print(calculate_evm_qpsk(samples_out, N))
 
-(samples_out, error_out, phase_out, freq_out) = costas_loop(samples, N, 0.3, 0.01)
+(samples_out, error_out, phase_out, freq_out) = costas_loop(samples, N, 0.13177, 0.009318)
 
 # demodulate symbols
 diff_bits = demod_qpsk(samples_out, N)
 data_bits = differential_decode(diff_bits, N, 4)
 
-# plot samples or data
-
-print(calculate_evm_qpsk(gnucostas, N))
-print(calculate_evm_qpsk(samples_out, N))
-
-ref_points = np.zeros(4, dtype = np.complex)
-ref_points[0] = 1/np.sqrt(2)*(1+1j)
-ref_points[1] = 1/np.sqrt(2)*(-1+1j)
-ref_points[2] = 1/np.sqrt(2)*(-1-1j)
-ref_points[3] = 1/np.sqrt(2)*(1-1j)
-
-plt.figure(figsize=(12,5))
-
-plt.subplot(1,2,1)
-plt.title("GNU Radio Block")
-plt.xlabel("I")
-plt.ylabel("Q")
-plt.scatter(np.real(gnucostas), np.imag(gnucostas))
-plt.scatter(np.real(ref_points), np.imag(ref_points))
-
-plt.subplot(1,2,2)
-plt.title("Python Code")
-plt.xlabel("I")
-plt.ylabel("Q")
-plt.scatter(np.real(samples_out), np.imag(samples_out))
-plt.scatter(np.real(ref_points), np.imag(ref_points))
-
-plt.show()
+# plot data
