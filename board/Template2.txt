@@ -1,0 +1,66 @@
+Board Information Report
+Filename     : C:\Users\Public\Documents\Altium\Projects\pcbway_backup\Template2.PcbDoc
+Date         : 11/4/2020
+Time         : 4:59:56 PM
+Time Elapsed : 00:00:00
+
+General
+    Board Size, 69.9mmx99.85mm
+    Components on board, 143
+count : 2
+
+Routing Information
+    Routing completion, 100.00%
+    Connections, 356
+    Connections routed, 356
+    Connections remaining, 0
+count : 4
+
+Non-Plated Hole Size, Pads, Vias
+    0mm, 40, 0
+    0.65mm, 2, 0
+count : 2
+
+Plated Hole Size, Pads, Vias
+    0mm, 388, 0
+    0.3mm, 0, 16
+    0.33mm, 0, 11
+    0.4mm, 0, 59
+    0.7112mm, 0, 10
+    1.016mm, 8, 0
+    1.4986mm, 6, 0
+    1.7018mm, 24, 0
+    3.4mm, 4, 0
+count : 9
+
+Track Width, Count
+    0.01mm, 10
+    0.05mm, 3
+    0.1mm, 66
+    0.127mm, 116
+    0.15mm, 18
+    0.16mm, 1
+    0.2mm, 426
+    0.22mm, 356
+    0.25mm, 85
+    0.254mm, 35
+    0.2545mm, 6
+    0.3mm, 7
+    0.32mm, 3
+    0.35mm, 2
+    0.4mm, 108
+    0.5mm, 20
+    0.6mm, 6
+    0.635mm, 2
+    0.7mm, 2
+    0.75mm, 1
+    0.8mm, 30
+    1mm, 55
+    1.5mm, 2
+    2mm, 1
+count : 24
+
+Net Track Width, Count
+    0.0978mm, 23
+    0.16mm, 81
+count : 2

@@ -1,0 +1,23 @@
+Removed Member From Class: ClassName=U_Mixer Member=C59
+Removed Member From Class: ClassName=U_Mixer Member=C60
+Removed Member From Class: ClassName=U_Mixer Member=C67
+Removed Member From Class: ClassName=U_Mixer Member=R28
+Added Net: Name=Stripline
+Added Member To Class: ClassName=U_MixerHF Member=Component C57 10nF
+Added Member To Class: ClassName=U_MixerHF Member=Component C59 47pF
+Added Member To Class: ClassName=U_MixerHF Member=Component C60 47pF
+Added Member To Class: ClassName=U_MixerHF Member=Component C61 10nF
+Added Member To Class: ClassName=U_MixerHF Member=Component C62 10nF
+Added Member To Class: ClassName=U_MixerHF Member=Component C63 10nF
+Added Member To Class: ClassName=U_MixerHF Member=Component C64 47pF
+Added Member To Class: ClassName=U_MixerHF Member=Component C65 47pF
+Added Member To Class: ClassName=U_MixerHF Member=Component C67 47pF
+Added Member To Class: ClassName=U_MixerHF Member=Component C68
+Added Member To Class: ClassName=U_Mixer Member=Component D2 ESD0P8RFL
+Added Member To Class: ClassName=U_CPU Member=Component JUSB CON SMD USB Micro MOLEX
+Added Member To Class: ClassName=U_MixerHF Member=Component L6 470nH
+Added Member To Class: ClassName=U_MixerHF Member=Component L7 470nH
+Added Member To Class: ClassName=U_MixerHF Member=Component L8 470nH
+Added Member To Class: ClassName=U_MixerHF Member=Component L9 470nH
+Added Member To Class: ClassName=U_MixerHF Member=Component L10 470nH
+Added Member To Class: ClassName=U_Mixer Member=Component SAW1 BR39162B3522U410

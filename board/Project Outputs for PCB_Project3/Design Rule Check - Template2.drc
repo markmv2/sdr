@@ -1,0 +1,75 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\Public\Documents\Altium\Projects\pcbway_backup\Template2.PcbDoc
+Date     : 12/14/2020
+Time     : 2:43:45 PM
+
+WARNING: Unplated multi-layer pad(s) detected
+   Pad USB-6(1.39mm,48.23mm) on Multi-Layer on Net GND
+   Pad USB-6(1.39mm,56.41mm) on Multi-Layer on Net GND
+   Pad USB-6(4.57mm,54.545mm) on Multi-Layer on Net GND
+   Pad USB-6(4.57mm,50.095mm) on Multi-Layer on Net GND
+
+Processing Rule : Clearance Constraint (Gap=0.25mm) ((InPolygon)),(InNetClass('RF'))
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.15mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint:  
+   Violation between Un-Routed Net Constraint:  
+   Violation between Un-Routed Net Constraint:  
+   Violation between Un-Routed Net Constraint:  
+Rule Violations :4
+
+Processing Rule : Width Constraint (Min=0.16mm) (Max=2.54mm) (Preferred=0.254mm) (All)
+   Violation between Width Constraint: Arc (38.25mm,64.364mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.16mm
+   Violation between Width Constraint: Track (35.55mm,64.364mm)(35.925mm,64.364mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.16mm
+   Violation between Width Constraint: Track (35.55mm,67.064mm)(35.55mm,64.364mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.16mm
+   Violation between Width Constraint: Track (35.55mm,67.064mm)(37.875mm,67.064mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.16mm
+   Violation between Width Constraint: Track (35.925mm,64.364mm)(36.575mm,64.364mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.16mm
+   Violation between Width Constraint: Track (36.575mm,64.364mm)(37.226mm,64.364mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.16mm
+   Violation between Width Constraint: Track (37.226mm,64.364mm)(37.875mm,64.364mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.16mm
+   Violation between Width Constraint: Track (37.875mm,64.364mm)(38.05mm,64.364mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.16mm
+   Violation between Width Constraint: Track (37.875mm,67.064mm)(38.25mm,67.064mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.16mm
+   Violation between Width Constraint: Track (38.25mm,64.564mm)(38.25mm,66.689mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.16mm
+   Violation between Width Constraint: Track (38.25mm,66.689mm)(38.25mm,67.064mm) on Top Layer Actual Width = 0.01mm, Target Width = 0.16mm
+Rule Violations :11
+
+Processing Rule : Width Constraint (Min=0.098mm) (Max=0.2mm) (Preferred=0.2mm) (InNetClass('RF'))
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=0.125mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=3.5mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0.254mm) (Disabled)(IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0.254mm) (Disabled)(All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 15
+Waived Violations : 0
+Time Elapsed        : 00:00:02

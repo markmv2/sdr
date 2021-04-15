@@ -1,0 +1,8 @@
+DRC Rules Export File for PCB: C:\Users\Public\Documents\Altium\Projects\pcbway_backup\Template2.PcbDoc
+RuleKind=Width|RuleName=Width_1|Scope=Board|Minimum=6.30
+RuleKind=MinimumAnnularRing|RuleName=MinimumAnnularRing|Scope=Board|Minimum=4.92
+RuleKind=Clearance|RuleName=Clearance_1|Scope=Board|Minimum=9.84
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=0.00
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=3.85
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=5.91
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0

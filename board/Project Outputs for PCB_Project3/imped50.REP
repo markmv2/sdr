@@ -1,0 +1,17 @@
+*************************************************************
+FileName = imped50.GBR
+AutoAperture = True
+*************************************************************
+Generating : Top Layer
+      File : imped50.GTL
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+*************************************************************
+

@@ -1,0 +1,13 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [PCB_Project3.PrjPCB]
+   Generated File[imped50.GTL]
+   Generated File[imped50.RUL]
+   Generated File[imped50.EXTREP]
+   Generated File[imped50.REP]
+
+
+Files Generated   : 4
+Documents Printed : 0
+
+Finished Output Generation At 11:34:36 PM On 12/14/2020

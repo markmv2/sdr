@@ -1,0 +1,13 @@
+Change Component Comment : Designator=GPS1 Old Comment=DNP New Comment=
+Added Pin To Net: NetName=Stripline Pin=TEST_IN-1
+Added Pin To Net: NetName=GND Pin=TEST_IN-2
+Added Pin To Net: NetName=GND Pin=TEST_IN-3
+Added Pin To Net: NetName=GND Pin=TEST_IN-4
+Added Pin To Net: NetName=GND Pin=TEST_IN-5
+Added Pin To Net: NetName=Stripline Pin=TEST_OUT-1
+Added Pin To Net: NetName=GND Pin=TEST_OUT-2
+Added Pin To Net: NetName=GND Pin=TEST_OUT-3
+Added Pin To Net: NetName=GND Pin=TEST_OUT-4
+Added Pin To Net: NetName=GND Pin=TEST_OUT-5
+Added Member To Class: ClassName=Toplevel Member=Component TEST_IN CONSMA
+Added Member To Class: ClassName=Toplevel Member=Component TEST_OUT CONSMA
