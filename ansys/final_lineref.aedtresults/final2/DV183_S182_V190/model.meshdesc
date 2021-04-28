@@ -1,0 +1,1030 @@
+$begin 'Header'
+	Version=16
+$end 'Header'
+$begin 'MeshBodies'
+	$begin 'Bodies'
+		$begin 'MeshBody'
+			Id=94
+			Nam='airbox'
+			Mat='air'
+			Diel=true
+			Type='Airbox'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=79
+			Nam='bottom'
+			Mat='copper'
+			Layer='bottom'
+			Priority=1
+			Thickness=1.0148829521639851e-05
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=84
+			Nam='bottom#t=fill'
+			Mat='air'
+			Layer='bottom#t=fill'
+			Diel=true
+			Thickness=1.0160000000000001e-05
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=82
+			Nam='bottom_Port1#ref_supporting_mesh'
+			Mat='copper'
+			Layer='bottom'
+			Sheet=true
+			Priority=1
+			Thickness=1.7499999999999998e-05
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=83
+			Nam='bottom_Port2#ref_supporting_mesh'
+			Mat='copper'
+			Layer='bottom'
+			Sheet=true
+			Priority=1
+			Thickness=1.7499999999999998e-05
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=85
+			Nam='dielectric'
+			Mat='FR4_epoxy'
+			Layer='dielectric'
+			Diel=true
+			Thickness=-1.0000000000000000e+00
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=97
+			Nam='Port1#ref_SINK'
+			Mat='pec'
+			DesNam='Port1#ref'
+			Sheet=true
+			Type='Sink'
+			Group=0
+			Net='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=98
+			Nam='Port1_SINK'
+			Mat='pec'
+			DesNam='Port1'
+			Sheet=true
+			Type='Sink'
+			Group=1
+			Net='Line'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=95
+			Nam='Port2#ref_SOURCE'
+			Mat='pec'
+			DesNam='Port2#ref'
+			Sheet=true
+			Type='Source'
+			Group=0
+			Net='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=96
+			Nam='Port2_SOURCE'
+			Mat='pec'
+			DesNam='Port2'
+			Sheet=true
+			Type='Source'
+			Group=1
+			Net='Line'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=87
+			Nam='top'
+			Mat='copper'
+			Layer='top'
+			Priority=1
+			Thickness=1.0074455458507054e-05
+			Group=1
+			Net='Line'
+			OrigNet='Line'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=86
+			Nam='top#L1'
+			Mat='copper'
+			DesNam='top'
+			Layer='top'
+			Priority=1
+			Thickness=1.0137348026671204e-05
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=90
+			Nam='top#L2'
+			Mat='copper'
+			DesNam='top'
+			Layer='top'
+			Priority=1
+			Thickness=1.0137348026671204e-05
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=93
+			Nam='top#t=fill'
+			Mat='air'
+			Layer='top#t=fill'
+			Diel=true
+			Thickness=1.0160000000000001e-05
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=91
+			Nam='top_Port1_supporting_mesh'
+			Mat='copper'
+			Layer='top'
+			Sheet=true
+			Priority=1
+			Thickness=1.7499999999999998e-05
+			Group=1
+			Net='Line'
+			OrigNet='Line'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=92
+			Nam='top_Port2_supporting_mesh'
+			Mat='copper'
+			Layer='top'
+			Sheet=true
+			Priority=1
+			Thickness=1.7499999999999998e-05
+			Group=1
+			Net='Line'
+			OrigNet='Line'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=10
+			Nam='via_10'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=12
+			Nam='via_11'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=14
+			Nam='via_12'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=16
+			Nam='via_13'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=18
+			Nam='via_14'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=20
+			Nam='via_15'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=1
+			Nam='via_16'
+			Mat='copper'
+			Priority=1
+			Thickness=1.9999999999999993e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=3
+			Nam='via_17'
+			Mat='copper'
+			Priority=1
+			Thickness=1.9999999999999990e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=5
+			Nam='via_18'
+			Mat='copper'
+			Priority=1
+			Thickness=1.9999999999999979e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=7
+			Nam='via_19'
+			Mat='copper'
+			Priority=1
+			Thickness=1.9999999999999998e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=9
+			Nam='via_20'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000012e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=11
+			Nam='via_21'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000012e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=13
+			Nam='via_22'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000012e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=15
+			Nam='via_23'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000012e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=17
+			Nam='via_24'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000012e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=19
+			Nam='via_25'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000012e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=21
+			Nam='via_26'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000012e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=22
+			Nam='via_27'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=24
+			Nam='via_28'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=26
+			Nam='via_29'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=28
+			Nam='via_30'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=30
+			Nam='via_31'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=32
+			Nam='via_32'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=23
+			Nam='via_33'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000012e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=25
+			Nam='via_34'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000012e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=27
+			Nam='via_35'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000012e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=29
+			Nam='via_36'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000012e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=31
+			Nam='via_37'
+			Mat='copper'
+			Priority=1
+			Thickness=1.9999999999999966e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=34
+			Nam='via_38'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=36
+			Nam='via_39'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=38
+			Nam='via_40'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=40
+			Nam='via_41'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=42
+			Nam='via_42'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=33
+			Nam='via_43'
+			Mat='copper'
+			Priority=1
+			Thickness=1.9999999999999966e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=35
+			Nam='via_44'
+			Mat='copper'
+			Priority=1
+			Thickness=1.9999999999999966e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=37
+			Nam='via_45'
+			Mat='copper'
+			Priority=1
+			Thickness=1.9999999999999966e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=39
+			Nam='via_46'
+			Mat='copper'
+			Priority=1
+			Thickness=1.9999999999999966e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=41
+			Nam='via_47'
+			Mat='copper'
+			Priority=1
+			Thickness=1.9999999999999966e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=44
+			Nam='via_48'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=46
+			Nam='via_49'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=48
+			Nam='via_50'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=50
+			Nam='via_51'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=52
+			Nam='via_52'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=54
+			Nam='via_53'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=43
+			Nam='via_54'
+			Mat='copper'
+			Priority=1
+			Thickness=1.9999999999999966e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=45
+			Nam='via_55'
+			Mat='copper'
+			Priority=1
+			Thickness=1.9999999999999966e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=47
+			Nam='via_56'
+			Mat='copper'
+			Priority=1
+			Thickness=1.9999999999999966e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=49
+			Nam='via_57'
+			Mat='copper'
+			Priority=1
+			Thickness=1.9999999999999966e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=51
+			Nam='via_58'
+			Mat='copper'
+			Priority=1
+			Thickness=1.9999999999999966e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=53
+			Nam='via_59'
+			Mat='copper'
+			Priority=1
+			Thickness=1.9999999999999966e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=2
+			Nam='via_6'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=56
+			Nam='via_60'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=55
+			Nam='via_61'
+			Mat='copper'
+			Priority=1
+			Thickness=1.9999999999999966e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=58
+			Nam='via_62'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=57
+			Nam='via_63'
+			Mat='copper'
+			Priority=1
+			Thickness=1.9999999999999966e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=60
+			Nam='via_64'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=59
+			Nam='via_65'
+			Mat='copper'
+			Priority=1
+			Thickness=1.9999999999999966e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=62
+			Nam='via_66'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=64
+			Nam='via_67'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000272e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=66
+			Nam='via_68'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000272e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=68
+			Nam='via_69'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000272e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=4
+			Nam='via_7'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=70
+			Nam='via_70'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000272e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=72
+			Nam='via_71'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000272e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=74
+			Nam='via_72'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000272e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=76
+			Nam='via_73'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000272e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=78
+			Nam='via_74'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000272e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=61
+			Nam='via_75'
+			Mat='copper'
+			Priority=1
+			Thickness=1.9999999999999966e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=63
+			Nam='via_76'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000272e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=65
+			Nam='via_77'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000272e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=67
+			Nam='via_78'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000272e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=69
+			Nam='via_79'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000272e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=6
+			Nam='via_8'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=71
+			Nam='via_80'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000272e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=73
+			Nam='via_81'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000272e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=75
+			Nam='via_82'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000272e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=77
+			Nam='via_83'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000272e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+		$begin 'MeshBody'
+			Id=8
+			Nam='via_9'
+			Mat='copper'
+			Priority=1
+			Thickness=2.0000000000000025e-04
+			Subtype=2
+			Group=0
+			Net='GND'
+			OrigNet='GND'
+		$end 'MeshBody'
+	$end 'Bodies'
+$end 'MeshBodies'
