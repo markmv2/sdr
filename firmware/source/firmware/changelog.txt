@@ -1,0 +1,335 @@
+diff -Naur drivers/max2870/max2870.c drivers_old/max2870/max2870.c
+--- drivers/max2870/max2870.c	2021-02-19 21:30:16.341000000 -0600
++++ drivers_old/max2870/max2870.c	2021-04-28 14:27:55.242651000 -0500
+@@ -530,29 +530,6 @@
+ void max2870StatusPrint(MAX2870Driver* driver, BaseSequentialStream* stdout)
+ {
+     max2870SpiState(driver, true);
+-
+-
+-    // manually select VCO, read register 6
+-    /*
+-    max2870WriteRegister(driver, 3, 0x02000000, true);
+-
+-    max2870ReadRegister6(driver);
+-
+-    chprintf(stdout, "V"SHELL_NEWLINE_STR"Registers:"SHELL_NEWLINE_STR);
+-    for(int i=0; i<7; i++) {
+-        chprintf(stdout, "\t%u: %08x"SHELL_NEWLINE_STR, i, driver->registers[i]);
+-    }
+-    
+-    max2870WriteRegister(driver, 3, 0xFE000000, true);
+-
+-    max2870ReadRegister6(driver);
+-
+-    chprintf(stdout, "V"SHELL_NEWLINE_STR"Registers:"SHELL_NEWLINE_STR);
+-    for(int i=0; i<7; i++) {
+-        chprintf(stdout, "\t%u: %08x"SHELL_NEWLINE_STR, i, driver->registers[i]);
+-    }
+-    */
+-
+     if(driver->enabled) {
+         if(driver->currentTune.isLocked) {
+             chprintf(stdout, "PLL Locked"SHELL_NEWLINE_STR);
+@@ -622,7 +599,6 @@
+     } else {
+         chprintf(stdout, "Low power mode"SHELL_NEWLINE_STR);
+     }
+-
+     max2870SpiState(driver, false);
+ }
+ 
+diff -Naur drivers/system.c drivers_old/system.c
+--- drivers/system.c	2021-04-28 12:58:09.933122000 -0500
++++ drivers_old/system.c	2021-04-28 14:27:55.242651000 -0500
+@@ -86,15 +86,15 @@
+     .peripheralMode = PAL_MODE_STM32_ALTERNATE_OPENDRAIN
+ };
+ 
+-/* ~~~~~~~~~~~~~~~~~~~~~ I2C IO Extender ~~~~~~~~~~~~~~~~~~~~~ */
+-/*
++/* ~~~~~~~~~~~~~~~~~~~~~ I2C IO Extender ~~~~~~~~~~~~~~~~~~~~~ 
++TODO: remove this
++*/
+ static const TCA6408Driver_config tca6408Config = {
+     .i2cPort = &I2CD1,
+     .i2cAddr = 0x20
+ };
+ 
+ TCA6408Driver mixerControllerIO;
+-*/
+ 
+ /* ~~~~~~~~~~~~~~~~~~~~~ I2C TCXO Temp sensor ~~~~~~~~~~~~~~~~~~~~~ */
+ static const MCP9804Driver_config mcp9804Config = {
+@@ -141,36 +141,11 @@
+     {GPIO_MIX_SW_LO, PAL_MODE_STM32_ALTERNATE_PUSHPULL, false},
+     {GPIO_UART_TX, PAL_MODE_STM32_ALTERNATE_PUSHPULL, true},
+     {GPIO_UART_RX, PAL_MODE_INPUT, true},
+-    {GPIO_SW_BYPASS, PAL_MODE_OUTPUT_PUSHPULL, false},
+-    {GPIO_SW_MIX, PAL_MODE_OUTPUT_PUSHPULL, false},
+-    {GPIO_SW_SW, PAL_MODE_OUTPUT_PUSHPULL, false},
+-    {GPIO_MIX_X2, PAL_MODE_OUTPUT_PUSHPULL, false},
+-    {GPIO_MIX_EN, PAL_MODE_OUTPUT_PUSHPULL, false},
+-    {GPIO_LOWBAND, PAL_MODE_OUTPUT_PUSHPULL, false},
+-    {-1, 0, false}
+-};
+-
+-/*
+-static const GPIOPinInit platformPinConfig[] = {
+-    {GPIO_PLL_SCK, PAL_MODE_STM32_ALTERNATE_PUSHPULL, false},
+-    {GPIO_PLL_MISO, PAL_MODE_STM32_ALTERNATE_PUSHPULL, false},
+-    {GPIO_PLL_MOSI, PAL_MODE_STM32_ALTERNATE_PUSHPULL, false},
+-    {GPIO_PLL_SS, PAL_MODE_OUTPUT_PUSHPULL, true},
+-    {GPIO_PLL_CE, PAL_MODE_OUTPUT_PUSHPULL, false},
+-    {GPIO_I2C_SCL, PAL_MODE_STM32_ALTERNATE_OPENDRAIN, false},
+-    {GPIO_I2C_SDA, PAL_MODE_STM32_ALTERNATE_OPENDRAIN, false},
+-    {GPIO_LED_USB, PAL_MODE_OUTPUT_PUSHPULL, true},
+-    {GPIO_LED_LOCK, PAL_MODE_OUTPUT_PUSHPULL, true},
+-    {GPIO_LED_MIX, PAL_MODE_OUTPUT_PUSHPULL, true},
+-    {GPIO_MIX_SW_EN, PAL_MODE_OUTPUT_OPENDRAIN, true},
+-    {GPIO_MIX_SW_LO, PAL_MODE_STM32_ALTERNATE_PUSHPULL, false},
+-    {GPIO_UART_TX, PAL_MODE_STM32_ALTERNATE_PUSHPULL, true},
+-    {GPIO_UART_RX, PAL_MODE_INPUT, true},
+     {-1, 0, false}
+ };
++/* 
++TODO: add correct GPIO values
+ */
+-
+-/*
+ static const GPIOPinInit platformI2CPinConfig[] = {
+     {GPIO_ANT_HIGH, PAL_MODE_OUTPUT_PUSHPULL, false},
+     {GPIO_ANT_MID, PAL_MODE_OUTPUT_PUSHPULL, false},
+@@ -182,9 +157,6 @@
+     {GPIO_LOWBAND, PAL_MODE_OUTPUT_PUSHPULL, false},
+     {-1, 0, false}
+ };
+-*/
+-
+-
+ 
+ /* ~~~~~~~~~~~~~~~~~~~~~ Converter ~~~~~~~~~~~~~~~~~~~~~ */
+ ConverterManager converter;
+@@ -206,20 +178,13 @@
+ 
+     gpioValues |= bandSpecificGpioSettings[converter->activeBand];
+ 
+-    /* No GPIOs are mapped over I2C anymore.  */
+-    //uint8_t i2cGpio = gpioValues & 0xFF;
+-    //gpioSetPort(GPIO_PORT_I2C0, i2cGpio);
++    /* The lowest 8 bits are all connected over I2C
++    TODO: Fix this!!! No GPIOs are mapped over I2C anymore.  */
++    uint8_t i2cGpio = gpioValues & 0xFF;
++    gpioSetPort(GPIO_PORT_I2C0, i2cGpio);
+ 
+     /* Handle the others */
+-    //gpioSetPin(GPIO_MIX_SW_EN, (gpioValues & _BV(CONVERTER_IO_PIN_MIX_SW_EN)) == 0);
+-    //systemEnableMCO((gpioValues & _BV(CONVERTER_IO_PIN_MIX_SW_LO)) > 0);
+-
+-    uint32_t portBmask = 0xFFFFF1F1;
+-    gpioSetPort(GPIO_PORT_GPIOB, gpioValues & portBmask);
+-
+-    gpioSetPin(GPIO_LOWBAND, (gpioValues & _BV(CONVERTER_IO_PIN_LOWBAND)) == 0);
+     gpioSetPin(GPIO_MIX_SW_EN, (gpioValues & _BV(CONVERTER_IO_PIN_MIX_SW_EN)) == 0);
+-
+     systemEnableMCO((gpioValues & _BV(CONVERTER_IO_PIN_MIX_SW_LO)) > 0);
+ 
+ 
+@@ -306,8 +271,7 @@
+ /* ~~~~~~~~~~~~~~~~~~~~~ Init function ~~~~~~~~~~~~~~~~~~~~~ */
+ void startSystemComponents(void)
+ {
+-    //bool hasI2CIO = false, hasLoPLL = false, hasSWMix = true;
+-    bool hasLoPLL = false, hasSWMix = true;
++    bool hasI2CIO = false, hasLoPLL = false, hasSWMix = true;
+ 
+     /* Unplug USB */
+     usbDisconnectBus(serusbcfg.usbp);
+@@ -315,8 +279,8 @@
+     /* Init shell */
+     shellInitApp();
+ 
+-    /* Init GPIO */
+-
++    /* Init GPIO
++    TODO: Add GPIOs used to replace IO expander */
+     if(!gpioInit(4)) {
+         /* ?! Damn... */
+         syslog("GPIO subsystem init failed.");
+@@ -347,8 +311,8 @@
+     /* Start serial port */
+     sdStart(&SD3, &serial3Config);
+ 
+-    /* Init IO extender */
+-    /*
++    /* Init IO extender
++    TODO: Must be be removed */
+     if(!TCA6408AInit(NULL, gpioRegisterPortDriver(GPIO_PORT_I2C0), &tca6408Config)) {
+         syslog("TCA6408A init failed.");
+     } else {
+@@ -357,7 +321,6 @@
+ 
+         hasI2CIO = true;
+     }
+-    */
+ 
+     xTaskCreate(mixLedTask, "Led", 64, (void*)&mixLedDelay, 1, &mixLedTaskHandle);
+ 
+@@ -369,10 +332,6 @@
+ 
+ 		hasLoPLL = true;
+     } else {
+-        shellCommandRegister("max", cmdMax, &loPLL);
+-
+-        hasLoPLL = true;
+-
+     	syslog("MAX2870 init failed.");
+     }
+ 
+@@ -384,39 +343,21 @@
+         shellCommandRegister("temp", cmdTemp, &tcxoTempSensor);
+     }
+ 
+-    converterInit(&converter, converterBands, converterSetGpio);
+-    shellCommandRegister("convert", cmdConvert, &converter);
+-
+-    /* Without the LO PLL all SHF bands are not available */
+-    if(!hasLoPLL) {
+-        syslog("SHF bands disabled!");
+-        converter.disabledBands |= _BV(1) | _BV(2) | _BV(3) | _BV(4);
+-    }
+-
+-    /* Without the SW mixer the SW band is not available (duh) */
+-    if(!hasSWMix) {
+-        syslog("SW band disabled!");
+-        converter.disabledBands |= _BV(0);
+-    }
+-
+-    if(!converterTune(&converter, &startupTuneRequest)) {
+-        syslog("Converter startup failed.");
+-    } else {
+-        syslog("Converter startup done.");
+-    }
+-    
+-    /*
++    /* Init the converter, if I2C is present.
++    TODO:
++    - Remove check for I2C IO expander
++    */
+     if(hasI2CIO) {
+         converterInit(&converter, converterBands, converterSetGpio);
+         shellCommandRegister("convert", cmdConvert, &converter);
+ 
+-        //Without the LO PLL all SHF bands are not available
++        /* Without the LO PLL all SHF bands are not available */
+         if(!hasLoPLL) {
+             syslog("SHF bands disabled!");
+             converter.disabledBands |= _BV(1) | _BV(2) | _BV(3) | _BV(4);
+         }
+ 
+-        //Without the SW mixer the SW band is not available (duh)
++        /* Without the SW mixer the SW band is not available (duh) */
+         if(!hasSWMix) {
+             syslog("SW band disabled!");
+             converter.disabledBands |= _BV(0);
+@@ -429,8 +370,8 @@
+         }
+ 
+     }
+-    */
+-    
++
++
+     /* Start sanity reboot monitor */
+     monitorEntryRegister(&sanityReboot, &sanityRebootMonitorTask, NULL, "Sanity");
+     monitorKick(&sanityReboot, true);
+@@ -447,11 +388,9 @@
+ void systemEnableMCO(bool enable)
+ {
+     if(enable) {
+-        gpioSetPinMode(GPIO_MIX_SW_LO, PAL_MODE_STM32_ALTERNATE_PUSHPULL);
+         RCC->CFGR |= STM32_MCOSEL_SYSCLK;
+     } else {
+         RCC->CFGR &=~ STM32_MCOSEL_SYSCLK;
+-        gpioSetPinMode(GPIO_MIX_SW_LO, PAL_MODE_INPUT);
+     }
+ }
+ 
+diff -Naur drivers/system.h drivers_old/system.h
+--- drivers/system.h	2021-02-22 19:10:15.957297000 -0600
++++ drivers_old/system.h	2021-04-28 14:27:55.242651000 -0500
+@@ -59,14 +59,13 @@
+ #define GPIO_LED_USB 	MAKE_GPIO(GPIO_PORT_GPIOB, GPIOB_LED_USB)
+ #define GPIO_LED_LOCK 	MAKE_GPIO(GPIO_PORT_GPIOB, GPIOB_LED_LOCK)
+ #define GPIO_LED_MIX 	MAKE_GPIO(GPIO_PORT_GPIOB, GPIOB_LED_MIX)
+-//#define GPIO_MIX_SW_EN 	MAKE_GPIO(GPIO_PORT_GPIOB, GPIOB_MIX_SW_EN)
+-//#define GPIO_MIX_SW_LO	MAKE_GPIO(GPIO_PORT_GPIOA, GPIOA_MIX_SW_LO)
++#define GPIO_MIX_SW_EN 	MAKE_GPIO(GPIO_PORT_GPIOB, GPIOB_MIX_SW_EN)
++#define GPIO_MIX_SW_LO	MAKE_GPIO(GPIO_PORT_GPIOA, GPIOA_MIX_SW_LO)
+ #define GPIO_UART_TX	MAKE_GPIO(GPIO_PORT_GPIOB, GPIOB_UART_TX)
+ #define GPIO_UART_RX	MAKE_GPIO(GPIO_PORT_GPIOB, GPIOB_UART_RX)
+ 
+ #define CONVERTER_IF_FREQ 1576000
+ /*GPIOs to be changed from I2C expander to normal GPIOs*/
+-/*
+ #define GPIO_ANT_HIGH 	MAKE_GPIO(GPIO_PORT_I2C0, CONVERTER_IO_PIN_ANT_HIGH)
+ #define GPIO_ANT_MID 	MAKE_GPIO(GPIO_PORT_I2C0, CONVERTER_IO_PIN_ANT_MID)
+ #define GPIO_SW_BYPASS	MAKE_GPIO(GPIO_PORT_I2C0, CONVERTER_IO_PIN_SW_BYPASS)
+@@ -75,19 +74,6 @@
+ #define GPIO_MIX_X2 	MAKE_GPIO(GPIO_PORT_I2C0, CONVERTER_IO_PIN_MIX_X2)
+ #define GPIO_MIX_EN 	MAKE_GPIO(GPIO_PORT_I2C0, CONVERTER_IO_PIN_MIX_EN)
+ #define GPIO_LOWBAND 	MAKE_GPIO(GPIO_PORT_I2C0, CONVERTER_IO_PIN_LOWBAND)
+-*/
+-
+-#define GPIO_SW_BYPASS	MAKE_GPIO(GPIO_PORT_GPIOB, CONVERTER_IO_PIN_SW_BYPASS)
+-#define GPIO_SW_MIX 	MAKE_GPIO(GPIO_PORT_GPIOB, CONVERTER_IO_PIN_SW_MIX)
+-#define GPIO_SW_SW 		MAKE_GPIO(GPIO_PORT_GPIOB, CONVERTER_IO_PIN_SW_SW)
+-#define GPIO_MIX_X2 	MAKE_GPIO(GPIO_PORT_GPIOB, CONVERTER_IO_PIN_MIX_X2)
+-#define GPIO_MIX_EN 	MAKE_GPIO(GPIO_PORT_GPIOB, CONVERTER_IO_PIN_MIX_EN)
+-#define GPIO_LOWBAND 	MAKE_GPIO(GPIO_PORT_GPIOA, CONVERTER_IO_PIN_LOWBAND)
+-#define GPIO_MIX_SW_EN 	MAKE_GPIO(GPIO_PORT_GPIOB, CONVERTER_IO_PIN_MIX_SW_EN)
+-#define GPIO_MIX_SW_LO	MAKE_GPIO(GPIO_PORT_GPIOA, 8)
+-
+-
+-
+ 
+ extern volatile uint32_t sanityRebootSeconds;
+
+diff -Naur logic/converter/converter.h logic_old/converter/converter.h
+--- logic/converter/converter.h	2021-02-18 11:42:42.856720000 -0600
++++ logic_old/converter/converter.h	2021-04-28 14:27:55.242651000 -0500
+@@ -37,7 +37,6 @@
+ #ifndef LOGIC_CONVERTER_CONVERTER_H_
+ #define LOGIC_CONVERTER_CONVERTER_H_
+ 
+-/*
+ #define CONVERTER_IO_PIN_ANT_HIGH 0
+ #define CONVERTER_IO_PIN_ANT_MID 1
+ #define CONVERTER_IO_PIN_SW_BYPASS 2
+@@ -50,25 +49,6 @@
+ #define CONVERTER_IO_PIN_MIX_SW_LO 9
+ #define CONVERTER_IO_PIN_LED1 10
+ #define CONVERTER_IO_PIN_LED2 11
+-*/
+-
+-// changed pin numbers
+-#define CONVERTER_IO_PIN_SW_BYPASS 12 //GPIOB
+-#define CONVERTER_IO_PIN_SW_MIX 0 //GPIOB (flipped in the schematic!!!)
+-#define CONVERTER_IO_PIN_SW_SW 13 //GPIOB (flipped in the schematic!!!)
+-#define CONVERTER_IO_PIN_MIX_X2 14 //GPIOB
+-#define CONVERTER_IO_PIN_MIX_EN 15 //GPIOB
+-#define CONVERTER_IO_PIN_LOWBAND 2 //GPIOA (!)
+-#define CONVERTER_IO_PIN_MIX_SW_EN 8 //GPIOB
+-#define CONVERTER_IO_PIN_MIX_SW_LO 9 //GPIOA (PA8 not PA9!!!)
+-
+-// not real pins
+-#define CONVERTER_IO_PIN_ANT_HIGH 3
+-#define CONVERTER_IO_PIN_ANT_MID 1
+-#define CONVERTER_IO_PIN_LED1 10
+-#define CONVERTER_IO_PIN_LED2 11
+-
+-
+ 
+ typedef struct {
+     /* These are inputs */
+ 
